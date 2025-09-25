@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
     volumes:
       # armazenar permamentemente os dados
-      - mysql_data:/var/lib/mysql
+      - data:/var/lib/mysql
     environment:
       # MYSQL_ROOT_PASSWORD: ibra@3872
       - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
@@ -56,4 +56,4 @@ services:
         condition: service_started
 
 volumes:
-  mysql_data:
+  data:

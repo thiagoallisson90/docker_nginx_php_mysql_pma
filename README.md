@@ -2,7 +2,7 @@
 
 ## Configuration
 
-Edit the `.env.example` file.
+Edit the `.env` file.
 
 ## Installation
 
@@ -12,22 +12,10 @@ Open a terminal and `cd` to the folder in which `docker-compose.yml` is saved an
 docker compose up -d
 ```
 
-### Stopping containers
-
-```
-docker compose stop
-```
-
 ### Removing containers
 
 To stop and remove all the containers use the `down` command:
 
 ```
 docker compose down
-```
-
-Use `-v` if you need to remove the database volume which is used to persist the database:
-
-```
-docker compose down -v
 ```
