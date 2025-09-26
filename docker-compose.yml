@@ -32,7 +32,7 @@ services:
     restart: unless-stopped
     volumes:
       # armazenar permamentemente os dados
-      - data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
     environment:
       # MYSQL_ROOT_PASSWORD: ibra@3872
       - MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}"
@@ -42,6 +42,7 @@ services:
 
   pma:
     image: phpmyadmin
+    container_name: website_pma
     restart: always
     environment:
       - PMA_HOST=db
@@ -52,8 +53,10 @@ services:
     depends_on:
       db:
         condition: service_started
+      php:
+        condition: service_started
       webserver:
         condition: service_started
 
 volumes:
-  data:
+  mysql_data:
