@@ -2,7 +2,7 @@
 
 ## Configuration
 
-Edit the `.env` file.
+Edit the `.env.example` file.
 
 ## Installation
 
